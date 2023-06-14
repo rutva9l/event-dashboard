@@ -50,7 +50,7 @@ export const Dashboard = () => {
   return (
     <div className="flex justify-start gap-2 m-1">
       {/* <EventsList /> */}
-      <div className="h-[85vh] w-48 rounded-md border p-4 flex-col content-between">
+      <div className="h-[85vh] w-[13rem] rounded-md border p-4 flex-col content-between">
         <h4 className="mb-4 text-sm font-medium leading-none">EVENTS</h4>
         <ScrollArea className="h-[95%]">
           {events.map((event) => (
