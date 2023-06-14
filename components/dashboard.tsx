@@ -44,7 +44,7 @@ export const Dashboard = () => {
       setCurrentTab(currTabArr.slice(-1)[0])
       setIsRemove(false)
     }
-    return currTabArr.indexOf(currentTab) - 1
+    return currentTab.id
   }
 
   return (
@@ -74,7 +74,7 @@ export const Dashboard = () => {
           <p>Your event and its details will be displayed here.</p>
         </div>
       ) : (
-        <Tabs>
+        <Tabs value={handleIndex()}>
           <div className="border-b pb-1">
             <TabsList>
               {currTabArr.map((el) =>
@@ -85,7 +85,6 @@ export const Dashboard = () => {
                     onClick={() => setCurrentTab(el)}
                     value={el.id}
                     key={el.id}
-                    data-state={el.id == currentTab.id ? "active" : "inactive"}
                   >
                     {el.event_type}
                     {el.id == currentTab.id ? (
@@ -108,7 +107,6 @@ export const Dashboard = () => {
               <TabsContent
                 key={el.id}
                 value={el.id}
-                data-state={el.id == currentTab.id ? "active" : "inactive"}
               >
                 <ScrollArea className="h-[75vh]">
                   <div className="grid grid-cols-2 gap-4 w-full">
